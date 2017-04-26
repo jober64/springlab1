@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: fake-balances-service
+  name: springlab1
 spec:
   source:
     type: Binary
@@ -17,4 +17,4 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'fake-balances-service:latest'
+      name: 'springlab1:latest'

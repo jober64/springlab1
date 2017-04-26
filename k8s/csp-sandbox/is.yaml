@@ -1,4 +1,4 @@
 kind: ImageStream
 apiVersion: v1
 metadata:
-  name: fake-balances-service
+  name: springlab1

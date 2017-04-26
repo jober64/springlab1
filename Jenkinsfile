@@ -1,10 +1,10 @@
 @Library('pipeline-library') _
 node('maven3') {
 
-  def serviceName = 'fake-balances-service'
-  def gitURL      = 'https://github.sebank.se/s66214/fake-balances.git'
+  def serviceName = 'springlab1'
+  def gitURL      = 'https://github.com/jober64/springlab1.git'
 
-  def envDev      = 'exploration-day'
+  def envDev      = 'mvc'
 
   def utils = new se.seb.build.Utils()
 

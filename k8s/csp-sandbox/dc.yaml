@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: DeploymentConfig
 metadata:
-  name: fake-balances-service
+  name: springlab1
 spec:
  strategy:
    type: Rolling
@@ -14,15 +14,15 @@ spec:
  replicas: 1
  test: false
  selector:
-  name: fake-balances-service
+  name: springlab1
  template:
   metadata:
    labels:
-    name: fake-balances-service
+    name: springlab1
   spec:
    containers:
     -
-     name: fake-balances-service
+     name: springlab1
      image: ' '
      ports:
       - containerPort: 8080
@@ -40,14 +40,14 @@ spec:
           path: application.yml
     - name: hawkular-openshift-agent
       configMap:
-        name: fake-balances-hawkular-config
+        name: springlab1-hawkular-config
    restartPolicy: Always
  triggers:
  - imageChangeParams:
     automatic: true
     containerNames:
-    - fake-balances-service
+    - springlab1
     from:
      kind: ImageStreamTag
-     name: fake-balances-service:latest
+     name: springlab1:latest
    type: ImageChange
