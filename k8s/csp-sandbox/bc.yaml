@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: fake-balances-service
+spec:
+  source:
+    type: Binary
+    binary: {  }
+    secrets: null
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: tools
+        name: 'jre-8-rhel7:latest'
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'fake-balances-service:latest'

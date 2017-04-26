@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: fake-balances-service
+spec:
+  host: fake-balances-service-exploration-day.cirrus.sebank.se
+  to:
+    kind: Service
+    name: fake-balances-service
+    weight: 100
+  port:
+    targetPort: 8080-tcp-proxy

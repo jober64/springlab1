@@ -1,0 +1,21 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: fake-balances-hawkular-config
+data:
+  hawkular-openshift-agent: |
+    endpoints:
+    - type: jolokia
+      protocol: "http"
+      port: 9001
+      path: /jolokia
+      metrics:
+      - name: java.lang:type=Threading#ThreadCount
+        type: counter
+        id:   VM Thread Count
+      - name: java.lang:type=Memory#HeapMemoryUsage#used
+        type: gauge
+        id:   VM Heap Memory Used
+      - name: java.lang:type=Memory#HeapMemoryUsage#max
+        type: gauge
+        id:   VM Heap Memory Max
