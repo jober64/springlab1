@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: fake-balances-service
+  name: springlab1
   labels:
-    name: fake-balances-service
+    name: springlab1
 spec:
  ports:
   - name: 8080-tcp-proxy
@@ -15,4 +15,4 @@ spec:
     port: 9001
     targetPort: 9001
  selector:
-  name: fake-balances-service
+  name: springlab1

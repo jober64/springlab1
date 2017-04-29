@@ -1,4 +1,4 @@
-@Library('pipeline-library') _
+//@Library('pipeline-library') _
 node('maven3') {
 
   def serviceName = 'springlab1'
@@ -12,7 +12,7 @@ node('maven3') {
     git url: "${gitURL}"
   }
 
-  def version = utils.getPomVersion()
+  //def version = utils.getPomVersion()
 
   stage('Build') {
     sh "mvn -q -s settings.xml -DskipTests package"
@@ -33,10 +33,10 @@ node('maven3') {
     sh "oc project ${envDev}"
 
     sh "oc start-build ${serviceName} --from-file target/*.jar -n ${envDev} --follow"
-    sh "oc tag ${envDev}/${serviceName}:latest ${envDev}/${serviceName}:${version}"
+    //sh "oc tag ${envDev}/${serviceName}:latest ${envDev}/${serviceName}:${version}"
 
-    openshiftDeploy(deploymentConfig: "${serviceName}", namespace: "${envDev}")
-    openshiftVerifyDeployment(deploymentConfig: "${serviceName}", namespace: "${envDev}")
+    //openshiftDeploy(deploymentConfig: "${serviceName}", namespace: "${envDev}")
+    //openshiftVerifyDeployment(deploymentConfig: "${serviceName}", namespace: "${envDev}")
   }
 
 }

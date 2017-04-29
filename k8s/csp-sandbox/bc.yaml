@@ -13,7 +13,7 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: tools
-        name: 'jre-8-rhel7:latest'
+        name: 'java-jboss-openjdk8-jdk:latest'
   output:
     to:
       kind: ImageStreamTag
