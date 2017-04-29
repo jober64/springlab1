@@ -6,7 +6,7 @@ node('maven3') {
 
   def envDev      = 'mvc'
 
-  def utils = new se.seb.build.Utils()
+  //def utils = new se.seb.build.Utils()
 
   stage('Checkout') {
     git url: "${gitURL}"
