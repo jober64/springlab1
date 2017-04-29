@@ -4,7 +4,7 @@ node('maven') {
   def serviceName = 'springlab1'
   def gitURL      = 'https://github.com/jober64/springlab1.git'
 
-  def envDev      = 'mvc'
+  def envDev      = 'myproject'
 
   //def utils = new se.seb.build.Utils()
 
