@@ -15,10 +15,10 @@ node('maven') {
   //def version = utils.getPomVersion()
 
   stage('Build') {
-    sh "mvn -q -s settings.xml -DskipTests package"
+    sh "mvn -q -DskipTests package"
   }
 
-  stage('Test and Analysis') {
+  /* stage('Test and Analysis') {
     parallel (
       'Test': {
         sh 'mvn -s settings.xml test'
@@ -27,7 +27,7 @@ node('maven') {
         echo 'PLACEHOLDER <sonarqube>'
       }
     )
-  }
+  }*/
 
   stage('Build and Deploy DEV') {
     sh "oc project ${envDev}"
