@@ -1,5 +1,5 @@
 //@Library('pipeline-library') _
-node('maven3') {
+node('maven') {
 
   def serviceName = 'springlab1'
   def gitURL      = 'https://github.com/jober64/springlab1.git'
